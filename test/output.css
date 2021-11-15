@@ -1,0 +1,41 @@
+*, :before, :after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, :before, :after {
+  border-color: #f2f2f2; }
+
+.tw .transform {
+  -webkit-transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1);
+  transform: translateX(0) translateY(0) rotate(0) skewX(0) skewY(0) scaleX(1) scaleY(1); }
+
+.tw .border-black {
+  border-color: black; }
+
+.v-2:after {
+  content: "";
+  pointer-events: none;
+  z-index: 30;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: .25;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+#go-top:active {
+  background-color: #0097f5; }
+
+.v-poster .info .title {
+  color: white;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3; }
+
+.v-poster .info a:hover {
+  color: white;
+  text-decoration: underline; }
