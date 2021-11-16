@@ -7,11 +7,12 @@ const sass = require("node-sass");
  * css-vars2value
  *
  * default options
- * @param rootSelector string  -    global vars inject selector
- * @param data string  - css        text
- * @param input string  - input     css file path
- * @param output string  - output   path
- * @params defaultVars - object     set default global vars
+ * @param rootSelector string  -          global vars inject selector
+ * @param data string  - css              text
+ * @param input string  - input           css file path
+ * @param output string  - output         path
+ * @params defaultVars - object           set default global vars
+ * @params sassRenderOptions - object     send options to sass render
  */
 module.exports = (opt) => {
   const options = Object.assign(
@@ -23,6 +24,7 @@ module.exports = (opt) => {
       defaultVars: {
         "tw-empty": "none",
       },
+      sassRenderOptions: {},
     },
     opt
   );
@@ -46,9 +48,11 @@ module.exports = (opt) => {
 
   // fs.writeFileSync('./output.scss',sassContent)
 
-  const result = sass.renderSync({
-    data: `${defaultValuesString}${sassContent}`,
-  });
+  const result = sass.renderSync(
+    Object.assign(options.sassRenderOptions, {
+      data: `${defaultValuesString}${sassContent}`,
+    })
+  );
 
   return options.output
     ? fs.writeFileSync(options.output, result.css, "utf-8")

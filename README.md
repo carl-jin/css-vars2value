@@ -214,7 +214,7 @@ type: [optional] string
 
 default: ""
 
-descriptions:
+#### descriptions:
 this option is used to replace some libraries
 
 not inject global vars in the root selector
@@ -223,13 +223,21 @@ like tailwind injected global vars in "\*, :before, :after"
 
 so if you using tailwind, set rootSelector = "\*, :before, :after"
 
+> if the css source was compressed, 
+> 
+> pls make sure this option also be compressed
+> 
+> "*,:before,:after"
+> 
+
 ### data
 
 type: [optional] string
 
 default: undefined
 
-descriptions: css input string
+#### descriptions: 
+css input string
 
 ### input
 
@@ -237,7 +245,8 @@ type: [optional] string
 
 default: undefined
 
-descriptions: css input file path
+#### descriptions: 
+css input file path
 
 ### output
 
@@ -245,7 +254,8 @@ type: [optional] string
 
 default: undefined
 
-descriptions: css output file path
+#### descriptions:
+css output file path
 
 ### defaultVars
 
@@ -253,7 +263,8 @@ type: [optional] object
 
 default: {}
 
-descriptions: set default global vars if not exist in css source
+#### descriptions:
+set default global vars if not exist in css source
 
 usage:
 
